@@ -55,7 +55,10 @@ export default function App() {
       location: 'Bischofswiese, Germany',
       card: 'Revolut ··7402',
       pointsEarned: '0,13',
-      spentAt: '9,96 €'
+      spentAt: '9,96 €',
+      from: 'Personal · EUR',
+      note: 'Groceries shopping',
+      totalSent: '9,96 €'
     },
     { 
       id: 6, 
@@ -67,7 +70,10 @@ export default function App() {
       iconBg: 'bg-blue-600 text-white', 
       text: 'AC',
       type: 'expense',
-      note: 'Transfer'
+      from: 'Personal · EUR',
+      note: 'Transfer',
+      phone: '+40 712 345 678',
+      totalSent: '25,00 €'
     },
     { 
       id: 1, 
@@ -79,7 +85,10 @@ export default function App() {
       iconBg: 'bg-slate-800 text-sky-400', 
       text: 'S',
       type: 'expense',
-      note: 'Game purchase'
+      from: 'Personal · EUR',
+      note: 'Game purchase',
+      card: 'Revolut ··7402',
+      totalSent: '36,00 €'
     },
     { 
       id: 2, 
@@ -92,7 +101,9 @@ export default function App() {
       text: 'AJ',
       subtitle: 'Received via Revolut',
       type: 'income',
-      note: 'Monthly allowance'
+      from: 'External Bank Account',
+      note: 'Monthly allowance',
+      totalSent: '1.000,00 €'
     },
     { 
       id: 3, 
@@ -108,7 +119,8 @@ export default function App() {
       phone: '+40720392116',
       totalSent: '100 €',
       totalTransactions: '2 transactions',
-      type: 'expense'
+      type: 'expense',
+      from: 'Personal · EUR'
     },
     { 
       id: 4, 
@@ -124,7 +136,8 @@ export default function App() {
       phone: '+40720392116',
       totalSent: '100 €',
       totalTransactions: '2 transactions',
-      type: 'expense'
+      type: 'expense',
+      from: 'Personal · EUR'
     },
     { 
       id: 5, 
@@ -137,7 +150,9 @@ export default function App() {
       text: 'AJ',
       subtitle: 'Received via Revolut',
       type: 'income',
-      note: 'Transfer'
+      from: 'External Bank Account',
+      note: 'Transfer',
+      totalSent: '100,00 €'
     }
   ];
 
@@ -277,7 +292,6 @@ export default function App() {
         {/* SCREEN: REVPOINTS TAB */}
         {currentScreen === 'revpoints' && (
           <div className="flex-1 flex flex-col bg-gradient-to-b from-[#6b33eb] via-[#5123cc] to-[#120638] text-white z-40 overflow-hidden">
-            
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -308,99 +322,18 @@ export default function App() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
-              
               <div className="text-center space-y-1.5 pt-2">
                 <p className="text-xs font-semibold text-white/85 tracking-wide">Standard plan</p>
                 <h1 className="text-5xl font-black tracking-tight flex items-center justify-center space-x-1.5">
                   <span>💎</span>
                   <span>457</span>
                 </h1>
-                
                 <div className="pt-2">
                   <button className="px-6 py-2 bg-white/20 hover:bg-white/25 backdrop-blur-md rounded-full text-xs font-bold tracking-wide border border-white/15 transition-colors shadow-sm">
                     Upgrade
                   </button>
                 </div>
               </div>
-
-              <div className="grid grid-cols-4 gap-2 text-center pt-1">
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/15 shadow-md">
-                    <Plus className="w-6 h-6" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white">Earn</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/15 shadow-md">
-                    <Award className="w-5 h-5" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white">Redeem</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/15 shadow-md">
-                    <Sparkles className="w-5 h-5" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white">Plan perks</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/15 shadow-md">
-                    <MoreHorizontal className="w-5 h-5" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white">More</span>
-                </div>
-              </div>
-
-              <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-4 border border-white/15 space-y-3 shadow-lg relative">
-                <div className="flex justify-between items-start">
-                  <div className="space-y-1 max-w-[210px]">
-                    <h3 className="text-sm font-bold text-white">Your wallet, race-ready</h3>
-                    <p className="text-[11px] text-white/70 leading-relaxed">Get the Audi Revolut F1® Team virtual cards for 500 points</p>
-                  </div>
-                  <div className="relative shrink-0 w-20 h-14">
-                    <div className="w-14 h-10 bg-gradient-to-r from-red-600 to-black rounded-lg absolute right-0 top-2 border border-white/20 shadow-md transform rotate-6"></div>
-                    <div className="w-14 h-10 bg-gradient-to-r from-slate-800 to-black rounded-lg absolute right-4 top-0 border border-white/20 shadow-md"></div>
-                  </div>
-                </div>
-                <div className="flex justify-center space-x-1.5 pt-1">
-                  <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-white/40 rounded-full"></div>
-                </div>
-              </div>
-
-              <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-4 space-y-4 shadow-lg">
-                <h3 className="text-xs font-bold text-white tracking-wider">Products</h3>
-
-                <div className="grid grid-cols-4 gap-3 text-center">
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-md">
-                      <Plane className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Miles</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-md">
-                      <Palmtree className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Stays</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-md">
-                      <Smartphone className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">eSIM</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-white shadow-md">
-                      <ShoppingBag className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Shops</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
         )}
@@ -408,7 +341,6 @@ export default function App() {
         {/* SCREEN: INVEST TAB */}
         {currentScreen === 'invest' && (
           <div className="flex-1 flex flex-col bg-[#0b0e14] text-white z-40 overflow-hidden">
-            
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3 bg-[#0b0e14]">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -439,232 +371,10 @@ export default function App() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
-              
               <div className="text-center space-y-1.5 pt-2">
                 <h1 className="text-3xl font-extrabold tracking-tight">Grow your wealth</h1>
                 <p className="text-xs text-white/60 font-medium">Invest today, from €1</p>
               </div>
-
-              <div className="pt-1">
-                <button className="w-full bg-[#1b2233] hover:bg-[#252e42] text-white border border-white/10 rounded-full py-3.5 text-xs font-bold tracking-wide shadow-md transition-colors">
-                  Start investing
-                </button>
-              </div>
-
-              <div className="bg-[#141824] border border-white/5 rounded-3xl p-5 space-y-4 shadow-lg">
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Layers className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-white">Invest in the brands you love</h3>
-                    <p className="text-[11px] text-white/50 leading-relaxed mt-0.5">Choose from 4,000+ stocks</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Percent className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-white">Save on trading fees</h3>
-                    <p className="text-[11px] text-white/50 leading-relaxed mt-0.5">0% commission trading i.e. no order execution fees within your plan limits. <span className="text-indigo-400 font-medium cursor-pointer">Other fees</span> e.g. FX fees may apply</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3.5">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <Lightbulb className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-white">Investing made simple</h3>
-                    <p className="text-[11px] text-white/50 leading-relaxed mt-0.5">From automated strategies to recurring buys, we’ll help you invest at your own pace</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-4 shadow-lg">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
-                    <span>Popular first-time buys</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-white/50" />
-                  </h3>
-                </div>
-
-                <div className="bg-[#0b0e14] p-1 rounded-full flex text-xs font-semibold">
-                  <button 
-                    onClick={() => setInvestSubTab('stocks')}
-                    className={`flex-1 py-1.5 rounded-full text-center transition-colors ${investSubTab === 'stocks' ? 'bg-[#1f2430] text-white shadow-sm' : 'text-white/50'}`}
-                  >
-                    Stocks
-                  </button>
-                  <button 
-                    onClick={() => setInvestSubTab('etfs')}
-                    className={`flex-1 py-1.5 rounded-full text-center transition-colors ${investSubTab === 'etfs' ? 'bg-[#1f2430] text-white shadow-sm' : 'text-white/50'}`}
-                  >
-                    ETFs
-                  </button>
-                </div>
-
-                <div className="grid grid-cols-4 gap-3 pt-1">
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-black flex items-center justify-center font-bold shadow-md border border-white/10">
-                      <div className="w-6 h-6 bg-emerald-500 rounded-xs transform rotate-45 flex items-center justify-center text-[10px] text-black font-black">N</div>
-                    </div>
-                    <span className="text-[11px] font-bold text-white">NVDA</span>
-                    <span className="text-[10px] text-emerald-400 font-semibold flex items-center space-x-0.5">
-                      <span>▲</span> <span>0,75 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-black flex items-center justify-center font-bold shadow-md border border-white/10 text-[9px] text-white tracking-tighter">
-                      SPCX
-                    </div>
-                    <span className="text-[11px] font-bold text-white">SPCX</span>
-                    <span className="text-[10px] text-rose-500 font-semibold flex items-center space-x-0.5">
-                      <span>▼</span> <span>1,25 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-black flex items-center justify-center font-bold shadow-md border border-white/10 text-white text-base">
-                      
-                    </div>
-                    <span className="text-[11px] font-bold text-white">AAPL</span>
-                    <span className="text-[10px] text-rose-500 font-semibold flex items-center space-x-0.5">
-                      <span>▼</span> <span>1,09 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-black flex items-center justify-center font-bold shadow-md border border-white/10 text-amber-400 text-[10px]">
-                      amazon
-                    </div>
-                    <span className="text-[11px] font-bold text-white">AMZN</span>
-                    <span className="text-[10px] text-rose-500 font-semibold flex items-center space-x-0.5">
-                      <span>▼</span> <span>1,33 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center font-bold shadow-md text-blue-900 text-xs tracking-tighter">
-                      T2
-                    </div>
-                    <span className="text-[11px] font-bold text-white">TTWO</span>
-                    <span className="text-[10px] text-rose-500 font-semibold flex items-center space-x-0.5">
-                      <span>▼</span> <span>2,77 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-red-600 flex items-center justify-center font-bold shadow-md text-white text-base">
-                      T
-                    </div>
-                    <span className="text-[11px] font-bold text-white">TSLA</span>
-                    <span className="text-[10px] text-emerald-400 font-semibold flex items-center space-x-0.5">
-                      <span>▲</span> <span>0,14 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center font-bold shadow-md overflow-hidden p-2">
-                      <div className="grid grid-cols-2 gap-0.5 w-full h-full">
-                        <div className="bg-red-500"></div>
-                        <div className="bg-green-500"></div>
-                        <div className="bg-blue-500"></div>
-                        <div className="bg-yellow-500"></div>
-                      </div>
-                    </div>
-                    <span className="text-[11px] font-bold text-white">MSFT</span>
-                    <span className="text-[10px] text-rose-500 font-semibold flex items-center space-x-0.5">
-                      <span>▼</span> <span>1,29 %</span>
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
-                    <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center font-bold shadow-md text-blue-600">
-                      <div className="w-5 h-5 bg-blue-600 transform rotate-45 rounded-xs"></div>
-                    </div>
-                    <span className="text-[11px] font-bold text-white">RHM</span>
-                    <span className="text-[10px] text-emerald-400 font-semibold flex items-center space-x-0.5">
-                      <span>▲</span> <span>2,48 %</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-3 shadow-lg">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
-                    <span>Watchlist</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-white/50" />
-                  </h3>
-                </div>
-
-                <div className="flex items-center space-x-3 py-2 cursor-pointer group">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-white/20 transition-colors">
-                    <Plus className="w-5 h-5" />
-                  </div>
-                  <span className="text-xs font-bold text-white">Add to watchlist</span>
-                </div>
-              </div>
-
-              <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-4 shadow-lg">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
-                    <span>Products</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-white/50" />
-                  </h3>
-                </div>
-
-                <div className="grid grid-cols-4 gap-3 text-center">
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <TrendingUp className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Stocks</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <div className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center">
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
-                      </div>
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Robo-Advisor</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <PieChart className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">ETFs</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <Building2 className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Bonds</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5 pt-1">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <FileText className="w-6 h-6" />
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">CFDs</span>
-                  </div>
-                  <div className="flex flex-col items-center space-y-1.5 pt-1">
-                    <button className="w-14 h-14 rounded-2xl bg-[#1f2430] border border-white/5 flex items-center justify-center text-white shadow-md">
-                      <div className="grid grid-cols-2 gap-1 w-4 h-4">
-                        <div className="bg-white rounded-2xs"></div>
-                        <div className="bg-white rounded-2xs"></div>
-                        <div className="bg-white rounded-2xs"></div>
-                        <div className="bg-white rounded-2xs"></div>
-                      </div>
-                    </button>
-                    <span className="text-[11px] font-medium text-white/90">Private markets</span>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
         )}
@@ -672,7 +382,6 @@ export default function App() {
         {/* SCREEN: CRYPTO TAB */}
         {currentScreen === 'crypto' && (
           <div className="flex-1 flex flex-col bg-[#0b0e14] text-white z-40 overflow-hidden">
-            
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3 bg-[#0b0e14]">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -703,55 +412,11 @@ export default function App() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
-              
               <div className="text-center space-y-1 pt-2">
                 <h1 className="text-4xl font-black tracking-tight">
                   0<span className="text-3xl font-bold">, €</span>
                 </h1>
               </div>
-
-              <div className="grid grid-cols-4 gap-2 text-center pt-1">
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/5 shadow-md">
-                    <TrendingUp className="w-5 h-5" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white/90">Trade</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/5 shadow-md">
-                    <ArrowLeft className="w-5 h-5 transform rotate-45" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white/90">Receive</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/5 shadow-md">
-                    <ArrowRight className="w-5 h-5 transform rotate-[-45deg]" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white/90">Send</span>
-                </div>
-                <div className="flex flex-col items-center space-y-1.5">
-                  <button className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/5 shadow-md">
-                    <MoreHorizontal className="w-5 h-5" />
-                  </button>
-                  <span className="text-[11px] font-medium text-white/90">More</span>
-                </div>
-              </div>
-
-              <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-3 shadow-lg">
-                <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <AlertTriangle className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-bold text-white">Action required</h3>
-                    <p className="text-[11px] text-white/60 leading-relaxed mt-0.5">We will ask you a few questions before you can continue trading</p>
-                  </div>
-                </div>
-                <button className="w-full bg-white text-slate-950 rounded-full py-3 text-xs font-bold tracking-wide shadow-md hover:bg-white/90 transition-colors">
-                  Get started
-                </button>
-              </div>
-
             </div>
           </div>
         )}
@@ -788,8 +453,6 @@ export default function App() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-5 pt-2 pb-32 space-y-6 scrollbar-none">
-              
-              {/* Grouped by Date */}
               {Array.from(new Set(transactions.map(t => t.date))).map((date) => {
                 const dayTxs = transactions.filter(t => t.date === date);
                 const dayTotal = dayTxs.reduce((acc, t) => {
@@ -827,61 +490,124 @@ export default function App() {
                   </div>
                 );
               })}
-
             </div>
           </div>
         )}
 
-        {/* SCREEN 3: TRANSACTION DETAIL VIEW */}
+        {/* SCREEN 3: TRANSACTION DETAIL VIEW (Exact match to provided screenshot) */}
         {currentScreen === 'transaction-detail' && selectedTx && (
-          <div className="flex-1 flex flex-col bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white z-50 overflow-y-auto px-5 pt-4 pb-28 scrollbar-none space-y-6">
+          <div className="flex-1 flex flex-col bg-gradient-to-b from-[#441a3d] via-[#1c1326] to-[#0c0914] text-white z-50 overflow-y-auto px-5 pt-3 pb-28 scrollbar-none space-y-4">
             
-            <div className="flex items-center justify-between">
+            {/* Top Close & Options */}
+            <div className="flex items-center justify-between pt-1">
               <button 
                 onClick={() => setCurrentScreen('all-transactions')}
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
-              <button className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+              <button className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
                 <MoreHorizontal className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="text-center space-y-2 pt-2">
+            {/* Avatar & Main Amount Header */}
+            <div className="text-center space-y-1.5 pt-1">
               <div className="relative inline-block">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl shadow-lg mx-auto ${selectedTx.iconBg}`}>
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl shadow-xl mx-auto ${selectedTx.iconBg}`}>
                   {selectedTx.text}
                 </div>
+                <div className="absolute bottom-0 right-0 w-6 h-6 bg-black rounded-full flex items-center justify-center border-2 border-[#2b1429] text-white text-[10px]">
+                  <span>➔</span>
+                </div>
               </div>
-              <h2 className="text-sm font-semibold text-white/90">{selectedTx.name}</h2>
+              <h2 className="text-sm font-medium text-white/90 pt-1">{selectedTx.name}</h2>
               <h1 className="text-4xl font-extrabold tracking-tight">{selectedTx.amount}</h1>
-              <p className="text-xs text-neutral-400">{selectedTx.date}, {selectedTx.time}</p>
+              <p className="text-xs text-white/50">{selectedTx.date}, {selectedTx.time}</p>
             </div>
 
-            <div className="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-4 space-y-4">
-              <div className="flex justify-between items-center text-xs">
-                <span className="text-neutral-400">Status</span>
-                <span className="text-emerald-400 font-semibold flex items-center space-x-1">
-                  <span>●</span> <span>Completed</span>
+            {/* Action Buttons Row */}
+            <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <button className="bg-white text-black hover:bg-white/90 rounded-2xl py-3 px-2 flex flex-col items-center justify-center space-y-1 font-bold shadow-lg transition-colors">
+                <ArrowRight className="w-4 h-4 transform rotate-[-45deg]" />
+                <span className="text-[11px] tracking-tight">Send again</span>
+              </button>
+              <button className="bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/10 rounded-2xl py-3 px-2 flex flex-col items-center justify-center space-y-1 font-bold transition-colors">
+                <ArrowLeft className="w-4 h-4 transform rotate-[45deg]" />
+                <span className="text-[11px] tracking-tight">Request</span>
+              </button>
+              <button className="bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/10 rounded-2xl py-3 px-2 flex flex-col items-center justify-center space-y-1 font-bold transition-colors">
+                <Calendar className="w-4 h-4" />
+                <span className="text-[11px] tracking-tight">Schedule</span>
+              </button>
+            </div>
+
+            {/* Note Section (Only if note exists) */}
+            {selectedTx.note && (
+              <div className="bg-white/[0.08] backdrop-blur-xl border border-white/10 rounded-3xl p-4 space-y-1.5 shadow-xl">
+                <span className="text-xs font-medium text-white/60">Note</span>
+                <p className="text-xs text-white leading-relaxed">{selectedTx.note}</p>
+              </div>
+            )}
+
+            {/* Main Info Card */}
+            <div className="bg-white/[0.08] backdrop-blur-xl border border-white/10 rounded-3xl p-4 space-y-4 shadow-xl text-xs">
+              {selectedTx.from && (
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">From</span>
+                  <span className="font-semibold text-blue-400 flex items-center space-x-1">
+                    <span className="font-bold text-white bg-blue-600 w-4 h-4 rounded-xs inline-flex items-center justify-center text-[9px]">R</span> 
+                    <span className="text-white">{selectedTx.from}</span>
+                  </span>
+                </div>
+              )}
+
+              <div className="flex justify-between items-center">
+                <span className="text-white/60">Confirmation</span>
+                <span className="font-semibold text-blue-400 flex items-center space-x-1 cursor-pointer hover:underline">
+                  <Download className="w-3.5 h-3.5" /> <span>Download</span>
                 </span>
               </div>
+
+              {selectedTx.phone && (
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Phone</span>
+                  <span className="font-medium text-white">{selectedTx.phone}</span>
+                </div>
+              )}
+
               {selectedTx.location && (
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-neutral-400">Location</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Location</span>
                   <span className="font-medium text-white">{selectedTx.location}</span>
                 </div>
               )}
+
               {selectedTx.card && (
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-neutral-400">Card</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Card</span>
                   <span className="font-medium text-white">{selectedTx.card}</span>
                 </div>
               )}
-              {selectedTx.note && (
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-neutral-400">Note</span>
-                  <span className="font-medium text-white text-right max-w-[200px] truncate">{selectedTx.note}</span>
+
+              <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                <span className="text-white/60">Exclude from analytics</span>
+                <div className="w-11 h-6 bg-white/20 rounded-full relative p-0.5 cursor-pointer flex items-center">
+                  <div className="w-5 h-5 bg-white rounded-full shadow-md transform translate-x-0"></div>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                <span className="text-white/60">Category</span>
+                <span className="font-semibold text-blue-400 flex items-center space-x-1.5">
+                  <span className="text-white/80">⇄</span> <span className="text-white">{selectedTx.category}</span>
+                </span>
+              </div>
+
+              {selectedTx.totalSent && (
+                <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                  <span className="text-white/60">Total sent</span>
+                  <span className="font-bold text-white">{selectedTx.totalSent}</span>
                 </div>
               )}
             </div>
