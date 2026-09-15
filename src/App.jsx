@@ -278,7 +278,6 @@ export default function App() {
         {currentScreen === 'revpoints' && (
           <div className="flex-1 flex flex-col bg-gradient-to-b from-[#6b33eb] via-[#5123cc] to-[#120638] text-white z-40 overflow-hidden">
             
-            {/* Top Bar */}
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -308,10 +307,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Scrollable RevPoints Content */}
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
               
-              {/* Header Balance View */}
               <div className="text-center space-y-1.5 pt-2">
                 <p className="text-xs font-semibold text-white/85 tracking-wide">Standard plan</p>
                 <h1 className="text-5xl font-black tracking-tight flex items-center justify-center space-x-1.5">
@@ -319,7 +316,6 @@ export default function App() {
                   <span>457</span>
                 </h1>
                 
-                {/* Upgrade Button */}
                 <div className="pt-2">
                   <button className="px-6 py-2 bg-white/20 hover:bg-white/25 backdrop-blur-md rounded-full text-xs font-bold tracking-wide border border-white/15 transition-colors shadow-sm">
                     Upgrade
@@ -327,7 +323,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="grid grid-cols-4 gap-2 text-center pt-1">
                 <div className="flex flex-col items-center space-y-1.5">
                   <button className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/15 shadow-md">
@@ -355,7 +350,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Promo Banner Carousel Card */}
               <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-4 border border-white/15 space-y-3 shadow-lg relative">
                 <div className="flex justify-between items-start">
                   <div className="space-y-1 max-w-[210px]">
@@ -376,7 +370,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Products Section */}
               <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-4 space-y-4 shadow-lg">
                 <h3 className="text-xs font-bold text-white tracking-wider">Products</h3>
 
@@ -416,7 +409,6 @@ export default function App() {
         {currentScreen === 'invest' && (
           <div className="flex-1 flex flex-col bg-[#0b0e14] text-white z-40 overflow-hidden">
             
-            {/* Top Bar */}
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3 bg-[#0b0e14]">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -446,23 +438,19 @@ export default function App() {
               </div>
             </div>
 
-            {/* Scrollable Invest Content */}
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
               
-              {/* Header */}
               <div className="text-center space-y-1.5 pt-2">
                 <h1 className="text-3xl font-extrabold tracking-tight">Grow your wealth</h1>
                 <p className="text-xs text-white/60 font-medium">Invest today, from €1</p>
               </div>
 
-              {/* Start Investing Button */}
               <div className="pt-1">
                 <button className="w-full bg-[#1b2233] hover:bg-[#252e42] text-white border border-white/10 rounded-full py-3.5 text-xs font-bold tracking-wide shadow-md transition-colors">
                   Start investing
                 </button>
               </div>
 
-              {/* Info Features Box */}
               <div className="bg-[#141824] border border-white/5 rounded-3xl p-5 space-y-4 shadow-lg">
                 <div className="flex items-start space-x-3.5">
                   <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -495,7 +483,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Popular First Time Buys */}
               <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-4 shadow-lg">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
@@ -504,7 +491,6 @@ export default function App() {
                   </h3>
                 </div>
 
-                {/* Stocks / ETFs Tab Toggle */}
                 <div className="bg-[#0b0e14] p-1 rounded-full flex text-xs font-semibold">
                   <button 
                     onClick={() => setInvestSubTab('stocks')}
@@ -520,7 +506,6 @@ export default function App() {
                   </button>
                 </div>
 
-                {/* Stock Grid Cards */}
                 <div className="grid grid-cols-4 gap-3 pt-1">
                   <div className="flex flex-col items-center space-y-1.5 p-2 bg-[#0b0e14]/60 rounded-2xl border border-white/5">
                     <div className="w-11 h-11 rounded-full bg-black flex items-center justify-center font-bold shadow-md border border-white/10">
@@ -609,7 +594,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Watchlist Section */}
               <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-3 shadow-lg">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
@@ -626,7 +610,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Products Section */}
               <div className="bg-[#141824] border border-white/5 rounded-3xl p-4 space-y-4 shadow-lg">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xs font-bold text-white tracking-wider flex items-center space-x-1">
@@ -690,7 +673,6 @@ export default function App() {
         {currentScreen === 'crypto' && (
           <div className="flex-1 flex flex-col bg-[#0b0e14] text-white z-40 overflow-hidden">
             
-            {/* Top Bar */}
             <div className="px-5 pt-4 pb-3 flex items-center justify-between z-40 shrink-0 gap-3 bg-[#0b0e14]">
               <div className="relative">
                 <button className="w-10 h-10 rounded-full bg-emerald-400 flex items-center justify-center text-slate-950 font-bold shadow-md">
@@ -720,7 +702,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Scrollable Crypto Content */}
             <div className="flex-1 overflow-y-auto px-4 pb-28 pt-2 scrollbar-none space-y-6">
               
               <div className="text-center space-y-1 pt-2">
@@ -808,44 +789,44 @@ export default function App() {
 
             <div className="flex-1 overflow-y-auto px-5 pt-2 pb-32 space-y-6 scrollbar-none">
               
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs text-neutral-400 font-medium">
-                  <span>27. August</span>
-                  <span>-9,96 €</span>
-                </div>
-                <div onClick={() => handleOpenDetail(transactions[0])} className="bg-neutral-900/80 border border-neutral-800/80 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:bg-neutral-800/80 transition-colors">
-                  <div className="flex items-center space-x-3.5">
-                    <div className="w-11 h-11 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900 font-black text-sm shadow-sm shrink-0">E</div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white">EDĒKA</h4>
-                      <p className="text-[11px] text-neutral-400">14:46</p>
-                    </div>
-                  </div>
-                  <span className="text-xs font-bold text-white">-9,96 €</span>
-                </div>
-              </div>
+              {/* Grouped by Date */}
+              {Array.from(new Set(transactions.map(t => t.date))).map((date) => {
+                const dayTxs = transactions.filter(t => t.date === date);
+                const dayTotal = dayTxs.reduce((acc, t) => {
+                  const val = parseFloat(t.amount.replace(' €', '').replace('.', '').replace(',', '.').replace('+', ''));
+                  return acc + (t.amount.startsWith('+') ? val : -val);
+                }, 0);
 
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs text-neutral-400 font-medium">
-                  <span>17. August</span>
-                  <span>-25 €</span>
-                </div>
-                <div onClick={() => handleOpenDetail(transactions[1])} className="bg-neutral-900/80 border border-neutral-800/80 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:bg-neutral-800/80 transition-colors">
-                  <div className="flex items-center space-x-3.5">
-                    <div className="w-11 h-11 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xs shadow-sm shrink-0 relative">
-                      AC
-                      <div className="absolute -bottom-1 -right-1 bg-black rounded-full p-0.5 border border-neutral-900">
-                        <ArrowDownRight className="w-3 h-3 text-white" />
+                return (
+                  <div key={date} className="space-y-3">
+                    <div className="flex justify-between items-center text-xs text-neutral-400 font-medium px-1">
+                      <span>{date}</span>
+                      <span>{dayTotal > 0 ? `+${dayTotal.toFixed(2).replace('.', ',')} €` : `${dayTotal.toFixed(2).replace('.', ',')} €`}</span>
+                    </div>
+
+                    {dayTxs.map((tx) => (
+                      <div 
+                        key={tx.id} 
+                        onClick={() => handleOpenDetail(tx)} 
+                        className="bg-neutral-900/80 border border-neutral-800/80 rounded-3xl p-4 flex items-center justify-between cursor-pointer hover:bg-neutral-800/80 transition-colors"
+                      >
+                        <div className="flex items-center space-x-3.5">
+                          <div className={`w-11 h-11 rounded-full flex items-center justify-center font-bold text-xs shadow-sm shrink-0 ${tx.iconBg}`}>
+                            {tx.text}
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-bold text-white">{tx.name}</h4>
+                            <p className="text-[11px] text-neutral-400">{tx.time}</p>
+                          </div>
+                        </div>
+                        <span className={`text-xs font-bold ${tx.type === 'income' ? 'text-emerald-400' : 'text-white'}`}>
+                          {tx.amount}
+                        </span>
                       </div>
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-white">Ana-Maria Cîrstov</h4>
-                      <p className="text-[11px] text-neutral-400">18:46</p>
-                    </div>
+                    ))}
                   </div>
-                  <span className="text-xs font-bold text-white">-25,00 €</span>
-                </div>
-              </div>
+                );
+              })}
 
             </div>
           </div>
@@ -853,7 +834,7 @@ export default function App() {
 
         {/* SCREEN 3: TRANSACTION DETAIL VIEW */}
         {currentScreen === 'transaction-detail' && selectedTx && (
-          <div className="flex-1 flex flex-col bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white z-50 overflow-y-auto px-5 pt-4 pb-28 scrollbar-none space-y-4">
+          <div className="flex-1 flex flex-col bg-gradient-to-b from-neutral-900 via-neutral-950 to-black text-white z-50 overflow-y-auto px-5 pt-4 pb-28 scrollbar-none space-y-6">
             
             <div className="flex items-center justify-between">
               <button 
@@ -876,6 +857,33 @@ export default function App() {
               <h2 className="text-sm font-semibold text-white/90">{selectedTx.name}</h2>
               <h1 className="text-4xl font-extrabold tracking-tight">{selectedTx.amount}</h1>
               <p className="text-xs text-neutral-400">{selectedTx.date}, {selectedTx.time}</p>
+            </div>
+
+            <div className="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-4 space-y-4">
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-neutral-400">Status</span>
+                <span className="text-emerald-400 font-semibold flex items-center space-x-1">
+                  <span>●</span> <span>Completed</span>
+                </span>
+              </div>
+              {selectedTx.location && (
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-neutral-400">Location</span>
+                  <span className="font-medium text-white">{selectedTx.location}</span>
+                </div>
+              )}
+              {selectedTx.card && (
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-neutral-400">Card</span>
+                  <span className="font-medium text-white">{selectedTx.card}</span>
+                </div>
+              )}
+              {selectedTx.note && (
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-neutral-400">Note</span>
+                  <span className="font-medium text-white text-right max-w-[200px] truncate">{selectedTx.note}</span>
+                </div>
+              )}
             </div>
 
           </div>
